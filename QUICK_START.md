@@ -1,6 +1,6 @@
 # 🚀 Guia Rápido - Configuração CI/CD
 
-Este guia ajuda a configurar rapidamente o CI/CD para o repositório **https://github.com/othonet/ara-app**.
+Este guia ajuda a configurar rapidamente o CI/CD para o repositório **https://github.com/othonet/pkg-app**.
 
 ## ⚡ Configuração Rápida na VPS
 
@@ -13,7 +13,7 @@ cd /root/app
 git init
 
 # Adicionar remote do GitHub
-git remote add origin https://github.com/othonet/ara-app.git
+git remote add origin https://github.com/othonet/pkg-app.git
 
 # Verificar remote configurado
 git remote -v
@@ -30,7 +30,7 @@ git push -u origin main
 
 ## 🔐 Configurar Secrets no GitHub
 
-1. Acesse: **https://github.com/othonet/ara-app/settings/secrets/actions**
+1. Acesse: **https://github.com/othonet/pkg-app/settings/secrets/actions**
 2. Clique em **New repository secret**
 3. Adicione os seguintes secrets:
 
@@ -71,7 +71,7 @@ Após configurar os secrets:
    ```
 
 2. **Verifique o workflow:**
-   - Acesse: https://github.com/othonet/ara-app/actions
+   - Acesse: https://github.com/othonet/pkg-app/actions
    - Você verá o workflow "Deploy to VPS" executando
 
 3. **Ou acione manualmente:**
@@ -94,7 +94,7 @@ Após configurar os secrets:
 ## 🆘 Problemas Comuns
 
 ### Erro: "Repository not found"
-- Verifique se o repositório existe: https://github.com/othonet/ara-app
+- Verifique se o repositório existe: https://github.com/othonet/pkg-app
 - Confirme que você tem acesso ao repositório
 
 ### Erro: "Permission denied (publickey)"

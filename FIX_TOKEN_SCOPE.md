@@ -23,7 +23,7 @@ refusing to allow a Personal Access Token to create or update workflow
 
 ```bash
 cd /root/app
-git push https://NOVO_TOKEN@github.com/othonet/ara-app.git main
+git push https://NOVO_TOKEN@github.com/othonet/pkg-app.git main
 ```
 
 ### Opção 2: Usar SSH (Mais Seguro)
@@ -45,7 +45,7 @@ Depois:
 
 ```bash
 cd /root/app
-git remote set-url origin git@github.com:othonet/ara-app.git
+git remote set-url origin git@github.com:othonet/pkg-app.git
 git push origin main
 ```
 
@@ -58,7 +58,7 @@ cd /root/app
 # Fazer commit sem o arquivo de workflow temporariamente
 git rm --cached .github/workflows/deploy.yml
 git commit -m "Temporarily remove workflow for push"
-git push https://SEU_TOKEN@github.com/othonet/ara-app.git main
+git push https://SEU_TOKEN@github.com/othonet/pkg-app.git main
 
 # Depois restaurar e fazer push com token correto
 git checkout HEAD~1 -- .github/workflows/deploy.yml

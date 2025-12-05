@@ -19,7 +19,7 @@ git add .
 git commit -m "Initial commit: ARA MES System"
 
 # Adicionar remote do GitHub
-git remote add origin https://github.com/othonet/ara-app.git
+git remote add origin https://github.com/othonet/pkg-app.git
 
 # Renomear branch para main (se necessário)
 git branch -M main
@@ -36,7 +36,7 @@ Se o repositório já existe no GitHub:
 cd /root/app
 
 # Adicionar remote
-git remote add origin https://github.com/othonet/ara-app.git
+git remote add origin https://github.com/othonet/pkg-app.git
 
 # Fazer pull do código existente
 git pull origin main --allow-unrelated-histories
@@ -62,7 +62,7 @@ cat ~/.ssh/id_ed25519.pub
 
 Depois, use a URL SSH:
 ```bash
-git remote set-url origin git@github.com:othonet/ara-app.git
+git remote set-url origin git@github.com:othonet/pkg-app.git
 ```
 
 ## ✅ Verificar Configuração

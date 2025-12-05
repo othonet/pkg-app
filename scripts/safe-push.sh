@@ -105,7 +105,7 @@ if npm run build; then
         echo -e "${GREEN}✅ Push realizado com sucesso!${NC}"
         echo ""
         echo -e "${GREEN}🔗 Acompanhe o deploy em:${NC}"
-        echo -e "${BLUE}   https://github.com/othonet/ara-app/actions${NC}"
+        echo -e "${BLUE}   https://github.com/othonet/pkg-app/actions${NC}"
         echo ""
     else
         echo ""

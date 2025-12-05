@@ -24,14 +24,14 @@ O commit de teste foi criado com sucesso! Agora você precisa fazer o push manua
 
 ```bash
 cd /root/app
-git push https://SEU_TOKEN@github.com/othonet/ara-app.git main
+git push https://SEU_TOKEN@github.com/othonet/pkg-app.git main
 ```
 
 Ou configure a URL com o token:
 
 ```bash
 cd /root/app
-git remote set-url origin https://SEU_TOKEN@github.com/othonet/ara-app.git
+git remote set-url origin https://SEU_TOKEN@github.com/othonet/pkg-app.git
 git push origin main
 ```
 
@@ -60,7 +60,7 @@ cat ~/.ssh/github_deploy.pub
 
 ```bash
 cd /root/app
-git remote set-url origin git@github.com:othonet/ara-app.git
+git remote set-url origin git@github.com:othonet/pkg-app.git
 git push origin main
 ```
 
@@ -80,11 +80,11 @@ git push origin main
 Após fazer o push, verifique:
 
 1. **No GitHub:**
-   - Acesse: https://github.com/othonet/ara-app/commits/main
+   - Acesse: https://github.com/othonet/pkg-app/commits/main
    - Você deve ver o commit "Test CI/CD deployment"
 
 2. **GitHub Actions:**
-   - Acesse: https://github.com/othonet/ara-app/actions
+   - Acesse: https://github.com/othonet/pkg-app/actions
    - Você deve ver o workflow "Deploy to VPS" executando
 
 ## ⚠️ Importante
@@ -104,5 +104,5 @@ Quando o push for bem-sucedido, o GitHub Actions irá:
 5. Fazer deploy automático
 6. Reiniciar o PM2
 
-Você pode acompanhar em: https://github.com/othonet/ara-app/actions
+Você pode acompanhar em: https://github.com/othonet/pkg-app/actions
 

@@ -52,7 +52,7 @@ Copie **TODO** o conteúdo (incluindo `-----BEGIN OPENSSH PRIVATE KEY-----` e `-
 
 ### 5. Adicionar no GitHub
 
-1. Acesse: https://github.com/othonet/ara-app/settings/secrets/actions
+1. Acesse: https://github.com/othonet/pkg-app/settings/secrets/actions
 2. Clique em **New repository secret**
 3. Nome: `VPS_SSH_KEY`
 4. Valor: Cole o conteúdo completo da chave privada

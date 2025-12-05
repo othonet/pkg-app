@@ -14,7 +14,7 @@ Para que o GitHub Actions possa fazer deploy na VPS, você precisa configurar os
 
 ### Como adicionar secrets:
 
-1. Acesse seu repositório no GitHub: **https://github.com/othonet/ara-app**
+1. Acesse seu repositório no GitHub: **https://github.com/othonet/pkg-app**
 2. Vá em **Settings** → **Secrets and variables** → **Actions**
 3. Clique em **New repository secret**
 4. Adicione os seguintes secrets:
