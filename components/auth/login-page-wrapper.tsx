@@ -59,13 +59,13 @@ export function LoginPageWrapper() {
             
             {/* AGRO Image */}
             <div className="relative z-10 flex items-center justify-center w-full h-full">
-              <div className="relative w-full h-full max-w-md max-h-[500px] flex items-center justify-center">
+              <div className="relative w-full h-full flex items-center justify-center">
                 {!imageError ? (
                   <Image
                     src="/images/agro-image.jpg"
                     alt="AGRO - Agricultura e Tecnologia"
                     fill
-                    className="object-contain rounded-lg"
+                    className="object-cover rounded-lg"
                     priority
                     sizes="(max-width: 768px) 0vw, 40vw"
                     onError={() => setImageError(true)}
