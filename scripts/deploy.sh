@@ -54,3 +54,4 @@ else
     echo -e "${RED}⚠️  Aplicação pode não estar respondendo corretamente${NC}"
 fi
 
+
