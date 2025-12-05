@@ -8,8 +8,8 @@ import { ColorThemeInit } from '@/components/color-theme-init'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'ARA MES - Sistema de Controle de Recebimento',
-  description: 'Sistema para controle de recebimento de frutas',
+  title: 'PKG - Sistema de Controle de Recebimento',
+  description: 'PKG by ENord Systems - Sistema para controle de recebimento de frutas',
 }
 
 export default function RootLayout({
