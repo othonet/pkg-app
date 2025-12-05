@@ -43,22 +43,19 @@ export function LoginPageWrapper() {
 
           {/* Right Side - Decorative Graphics (40%) - Hidden on mobile */}
           <div className="hidden md:flex flex-[0.4] items-center justify-center p-6 md:p-8 bg-card/20 dark:bg-card/10 backdrop-blur-sm relative overflow-hidden">
-            {/* Main circular graphic */}
+            {/* Main circular graphic with AGRO icon */}
             <div className="relative z-10 flex items-center justify-center">
-              <div className="w-64 h-64 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-2xl">
-                <div className="w-full h-full flex">
-                  <div className="w-1/2 bg-primary/80 dark:bg-primary/70"></div>
-                  <div className="w-1/2 bg-primary dark:bg-primary/90"></div>
-                </div>
+              <div className="w-64 h-64 rounded-full overflow-hidden ring-4 ring-green-500/30 shadow-2xl bg-gradient-to-br from-green-500/80 via-green-500/70 to-green-600/90 dark:from-green-500/70 dark:via-green-500/60 dark:to-green-600/80 flex items-center justify-center">
+                <Sprout className="w-32 h-32 text-white/90 drop-shadow-lg" />
               </div>
               
               {/* Smaller decorative circles */}
-              <div className="absolute top-10 right-10 w-16 h-16 bg-primary/60 rounded-full blur-sm"></div>
-              <div className="absolute bottom-20 left-12 w-12 h-12 bg-primary/50 rounded-full blur-sm"></div>
-              <div className="absolute top-32 left-8 w-8 h-8 bg-primary/40 rounded-full blur-sm"></div>
-              <div className="absolute bottom-32 right-16 w-10 h-10 bg-primary/50 rounded-full blur-sm"></div>
-              <div className="absolute top-1/2 right-8 w-14 h-14 bg-primary/45 rounded-full blur-sm"></div>
-              <div className="absolute bottom-16 right-1/3 w-9 h-9 bg-primary/40 rounded-full blur-sm"></div>
+              <div className="absolute top-10 right-10 w-16 h-16 bg-green-500/40 rounded-full blur-sm"></div>
+              <div className="absolute bottom-20 left-12 w-12 h-12 bg-green-500/30 rounded-full blur-sm"></div>
+              <div className="absolute top-32 left-8 w-8 h-8 bg-green-500/30 rounded-full blur-sm"></div>
+              <div className="absolute bottom-32 right-16 w-10 h-10 bg-green-500/35 rounded-full blur-sm"></div>
+              <div className="absolute top-1/2 right-8 w-14 h-14 bg-green-500/35 rounded-full blur-sm"></div>
+              <div className="absolute bottom-16 right-1/3 w-9 h-9 bg-green-500/30 rounded-full blur-sm"></div>
             </div>
 
             {/* Background pattern */}
