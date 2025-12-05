@@ -1,0 +1,132 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+enum UserRole {
+  DIRETOR
+  ANALISTA
+  INSPETOR
+}
+
+enum ContainerColor {
+  VERMELHO
+  AZUL_MARINHO
+  VERDE
+  AMARELO
+  BRANCO
+  LARANJA
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      UserRole
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Cabecal {
+  id          String   @id @default(cuid())
+  nome        String
+  descricao   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  valvulas    Valvula[]
+  apontamentos Apontamento[]
+}
+
+model Valvula {
+  id          String   @id @default(cuid())
+  nome        String
+  descricao   String?
+  cabecalId   String
+  cabecal     Cabecal  @relation(fields: [cabecalId], references: [id], onDelete: Cascade)
+  cor         ContainerColor
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  apontamentos Apontamento[]
+}
+
+model Variedade {
+  id          String   @id @default(cuid())
+  nome        String
+  descricao   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  apontamentos Apontamento[]
+}
+
+model LinhaProducao {
+  id          String   @id @default(cuid())
+  letra       String   @unique
+  descricao   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Posicao {
+  id          String   @id @default(cuid())
+  posicao     String   @unique
+  descricao   String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Embaladeira {
+  id          String   @id @default(cuid())
+  nome        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Apontamento {
+  id              String    @id @default(cuid())
+  numeroCarroca   Int
+  numeroPallet    Int
+  cabecalId       String
+  cabecal         Cabecal   @relation(fields: [cabecalId], references: [id])
+  valvulaId       String
+  valvula         Valvula   @relation(fields: [valvulaId], references: [id])
+  variedadeId     String
+  variedade       Variedade @relation(fields: [variedadeId], references: [id])
+  quantidadeContainers Int
+  cor             ContainerColor
+  pesoKg          Float?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  amostrasPeso    AmostraPeso[]
+  packingSimulacao PackingSimulacao?
+}
+
+model AmostraPeso {
+  id              String    @id @default(cuid())
+  apontamentoId   String?
+  apontamento     Apontamento? @relation(fields: [apontamentoId], references: [id], onDelete: Cascade)
+  pesoAmostra     Float     // Peso de uma amostra individual
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+// Tabela temporária para simulação de packing
+// TODO: Substituir por implementação real de packing
+model PackingSimulacao {
+  id              String    @id @default(cuid())
+  apontamentoId   String
+  apontamento     Apontamento @relation(fields: [apontamentoId], references: [id], onDelete: Cascade)
+  quantidadeUsada Int
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  @@unique([apontamentoId])
+}
+
