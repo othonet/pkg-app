@@ -60,8 +60,7 @@ export function LoginPageWrapper() {
             {/* AGRO Image */}
             <div className="relative z-10 flex items-center justify-center w-full h-full">
               <div className="relative w-full h-full max-w-md max-h-[500px] flex items-center justify-center">
-                {/* Try to load image, fallback if not found */}
-                <div className="relative w-full h-full">
+                {!imageError ? (
                   <Image
                     src="/images/agro-image.jpg"
                     alt="AGRO - Agricultura e Tecnologia"
@@ -69,14 +68,11 @@ export function LoginPageWrapper() {
                     className="object-contain rounded-lg"
                     priority
                     sizes="(max-width: 768px) 0vw, 40vw"
-                    onError={(e) => {
-                      // Hide image on error
-                      const target = e.target as HTMLImageElement
-                      target.style.display = 'none'
-                    }}
+                    onError={() => setImageError(true)}
                   />
-                  {/* Fallback decorativo caso a imagem não exista */}
-                  <div className="agro-fallback absolute inset-0 flex-col items-center justify-center text-center p-8 hidden">
+                ) : (
+                  /* Fallback decorativo caso a imagem não exista */
+                  <div className="flex flex-col items-center justify-center text-center p-8 w-full h-full">
                     <div className="w-32 h-32 rounded-full bg-gradient-to-br from-green-500/20 via-green-500/10 to-primary/10 flex items-center justify-center mb-6 shadow-lg ring-2 ring-green-500/20">
                       <svg
                         className="w-16 h-16 text-green-600 dark:text-green-400"
@@ -98,8 +94,11 @@ export function LoginPageWrapper() {
                     <p className="text-sm text-green-600/80 dark:text-green-400/80">
                       Agricultura e Tecnologia
                     </p>
+                    <p className="text-xs text-muted-foreground mt-4">
+                      Adicione sua imagem em: /public/images/agro-image.jpg
+                    </p>
                   </div>
-                </div>
+                )}
               </div>
             </div>
           </div>
