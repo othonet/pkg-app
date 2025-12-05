@@ -1,37 +1,21 @@
 "use client"
 
 import LoginForm from './login-form'
-import { ColorPicker } from '@/components/ui/color-picker'
 import { ThemeToggle } from '@/components/ui/theme-toggle'
-import Link from 'next/link'
 
 export function LoginPageWrapper() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-background via-background to-primary/5 relative overflow-hidden">
       {/* Top Bar */}
       <div className="relative z-20 flex items-center justify-end gap-4 px-6 py-4 backdrop-blur-md bg-card/30 dark:bg-card/20 border-b border-border/30">
-        <Link 
-          href="/"
-          className="text-sm font-medium text-foreground/70 hover:text-foreground transition-colors"
-        >
-          Login
-        </Link>
-        <Link
-          href="#"
-          className="px-4 py-2 rounded-lg bg-primary text-primary-foreground text-sm font-medium hover:bg-primary/90 transition-colors shadow-sm"
-        >
-          Create user
-        </Link>
-        <div className="flex items-center gap-2 ml-2">
-          <ColorPicker />
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
 
-      {/* Split Screen Container */}
-      <div className="flex flex-1 overflow-hidden">
-        {/* Left Side - Login Form (60%) */}
-        <div className="flex-[0.6] flex items-center justify-center p-8 bg-gradient-to-br from-background via-background/95 to-primary/5 relative">
+      {/* Split Screen Container - Centralizado com espaços laterais */}
+      <div className="flex flex-1 overflow-hidden items-center justify-center px-8 py-8">
+        <div className="flex w-full max-w-6xl h-full max-h-[85vh] rounded-2xl overflow-hidden shadow-2xl border border-border/30 backdrop-blur-sm">
+          {/* Left Side - Login Form (60%) */}
+          <div className="flex-[0.6] flex items-center justify-center p-8 bg-gradient-to-br from-background via-background/95 to-primary/5 relative">
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
@@ -59,8 +43,8 @@ export function LoginPageWrapper() {
           </div>
         </div>
 
-        {/* Right Side - Decorative Graphics (40%) */}
-        <div className="flex-[0.4] flex items-center justify-center p-8 bg-card/20 dark:bg-card/10 backdrop-blur-sm relative overflow-hidden">
+          {/* Right Side - Decorative Graphics (40%) */}
+          <div className="flex-[0.4] flex items-center justify-center p-8 bg-card/20 dark:bg-card/10 backdrop-blur-sm relative overflow-hidden">
           {/* Main circular graphic */}
           <div className="relative z-10 flex items-center justify-center">
             <div className="w-64 h-64 rounded-full overflow-hidden ring-4 ring-primary/20 shadow-2xl">
