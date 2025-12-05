@@ -14,6 +14,12 @@ export async function middleware(request: NextRequest) {
   console.log("[MIDDLEWARE] Token encontrado:", token ? `Sim (${token.length} chars)` : "Não")
   console.log("[MIDDLEWARE] Todos os cookies:", request.cookies.getAll().map(c => c.name))
 
+  // Rotas públicas - arquivos estáticos (imagens, etc)
+  if (pathname.startsWith('/images/') || pathname.startsWith('/_next/static/')) {
+    console.log("[MIDDLEWARE] Arquivo estático, permitindo acesso")
+    return NextResponse.next()
+  }
+
   // Rotas públicas
   if (pathname === '/' || pathname.startsWith('/api/auth/')) {
     console.log("[MIDDLEWARE] Rota pública de autenticação, permitindo acesso")
@@ -76,8 +82,9 @@ export const config = {
      * - _next/static (static files)
      * - _next/image (image optimization files)
      * - favicon.ico (favicon file)
+     * - images/ (public images)
      */
-    '/((?!_next/static|_next/image|favicon.ico).*)',
+    '/((?!_next/static|_next/image|favicon.ico|images/).*)',
   ],
 }
 
