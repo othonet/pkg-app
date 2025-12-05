@@ -271,7 +271,7 @@ export default function ApontamentosList({
         </CardHeader>
         {showFilters && (
           <CardContent>
-            <div className="grid gap-4 md:grid-cols-4">
+            <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
               <div className="space-y-2">
                 <Label htmlFor="data">Data</Label>
                 <Input
@@ -347,22 +347,23 @@ export default function ApontamentosList({
         </CardHeader>
         <CardContent>
           {apontamentos.length > 0 ? (
-            <div className="overflow-x-auto">
-              <table className="w-full">
-                <thead>
-                  <tr className="border-b">
-                    <th className="text-left p-3 font-semibold">Data/Hora</th>
-                    <th className="text-left p-3 font-semibold">Nº Carroça</th>
-                    <th className="text-left p-3 font-semibold">Nº Pallet</th>
-                    <th className="text-left p-3 font-semibold">Cabeçal</th>
-                    <th className="text-left p-3 font-semibold">Válvula</th>
-                    <th className="text-left p-3 font-semibold">Variedade</th>
-                    <th className="text-right p-3 font-semibold">Quantidade</th>
-                    <th className="text-left p-3 font-semibold">Cor</th>
-                    <th className="text-right p-3 font-semibold">Peso (kg)</th>
-                    <th className="text-center p-3 font-semibold">Ações</th>
-                  </tr>
-                </thead>
+            <div className="overflow-x-auto -mx-4 sm:mx-0">
+              <div className="inline-block min-w-full align-middle px-4 sm:px-0">
+                <table className="min-w-full divide-y divide-border">
+                  <thead>
+                    <tr className="border-b">
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Data/Hora</th>
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Nº Carroça</th>
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Nº Pallet</th>
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Cabeçal</th>
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Válvula</th>
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Variedade</th>
+                      <th className="text-right p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Quantidade</th>
+                      <th className="text-left p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Cor</th>
+                      <th className="text-right p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Peso (kg)</th>
+                      <th className="text-center p-2 sm:p-3 text-xs sm:text-sm font-semibold whitespace-nowrap">Ações</th>
+                    </tr>
+                  </thead>
                 <tbody>
                   {apontamentos.map((ap, index) => (
                     <tr
@@ -370,18 +371,18 @@ export default function ApontamentosList({
                       className="border-b hover:bg-accent/50 transition-colors animate-in fade-in-0"
                       style={{ animationDelay: `${index * 20}ms` }}
                     >
-                      <td className="p-3 text-sm">
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm whitespace-nowrap">
                         {format(new Date(ap.createdAt), "dd/MM/yyyy HH:mm")}
                       </td>
-                      <td className="p-3 font-medium">{ap.numeroCarroca}</td>
-                      <td className="p-3 font-medium">{ap.numeroPallet}</td>
-                      <td className="p-3">{ap.cabecal.nome}</td>
-                      <td className="p-3">{ap.valvula.nome}</td>
-                      <td className="p-3">{ap.variedade.nome}</td>
-                      <td className="p-3 text-right font-medium">
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium whitespace-nowrap">{ap.numeroCarroca}</td>
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm font-medium whitespace-nowrap">{ap.numeroPallet}</td>
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm whitespace-nowrap">{ap.cabecal.nome}</td>
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm whitespace-nowrap">{ap.valvula.nome}</td>
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm whitespace-nowrap">{ap.variedade.nome}</td>
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm text-right font-medium whitespace-nowrap">
                         {ap.quantidadeContainers}
                       </td>
-                      <td className="p-3">
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm whitespace-nowrap">
                         <div className="flex items-center gap-2">
                           <div
                             className="w-4 h-4 rounded-full border border-border shadow-sm"
@@ -392,23 +393,24 @@ export default function ApontamentosList({
                           <span>{COLOR_NAMES[ap.cor]}</span>
                         </div>
                       </td>
-                      <td className="p-3 text-right">
+                      <td className="p-2 sm:p-3 text-xs sm:text-sm text-right whitespace-nowrap">
                         {ap.pesoKg ? ap.pesoKg.toFixed(2) : "-"}
                       </td>
-                      <td className="p-3 text-center">
+                      <td className="p-2 sm:p-3 text-center whitespace-nowrap">
                         <Button
                           variant="ghost"
                           size="sm"
                           onClick={() => handleEdit(ap)}
-                          className="h-8 w-8 p-0"
+                          className="h-7 w-7 sm:h-8 sm:w-8 p-0"
                         >
-                          <Edit className="h-4 w-4" />
+                          <Edit className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                         </Button>
                       </td>
                     </tr>
                   ))}
                 </tbody>
-              </table>
+                </table>
+              </div>
             </div>
           ) : (
             <div className="flex flex-col items-center justify-center py-12 text-center">

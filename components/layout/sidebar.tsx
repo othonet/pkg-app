@@ -71,16 +71,16 @@ export function Sidebar() {
   }
 
   return (
-    <div className="flex h-full w-64 flex-col rounded-2xl backdrop-blur-xl bg-card/40 dark:bg-card/30 border border-border/50 shadow-xl shadow-black/5 dark:shadow-black/20 ring-1 ring-white/10 dark:ring-white/5 overflow-hidden">
+    <div className="flex h-full w-full lg:w-64 flex-col rounded-xl sm:rounded-2xl backdrop-blur-xl bg-card/40 dark:bg-card/30 border border-border/50 shadow-xl shadow-black/5 dark:shadow-black/20 ring-1 ring-white/10 dark:ring-white/5 overflow-hidden">
       {/* Overlay interno para profundidade */}
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-white/10 via-white/5 to-transparent dark:from-white/5 dark:via-transparent dark:to-white/5 pointer-events-none"></div>
       
       {/* Header com Glassmorfismo */}
-      <div className="relative z-10 flex h-16 items-center border-b border-border/30 px-6 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent backdrop-blur-md">
+      <div className="relative z-10 flex h-14 sm:h-16 items-center border-b border-border/30 px-4 sm:px-6 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent backdrop-blur-md">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-gradient-to-br from-primary via-primary/90 to-primary/80 flex items-center justify-center shadow-lg ring-2 ring-primary/30 backdrop-blur-sm">
+          <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-primary via-primary/90 to-primary/80 flex items-center justify-center shadow-lg ring-2 ring-primary/30 backdrop-blur-sm">
             <svg
-              className="w-5 h-5 text-primary-foreground drop-shadow-sm"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-primary-foreground drop-shadow-sm"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -93,41 +93,41 @@ export function Sidebar() {
               />
             </svg>
           </div>
-          <h1 className="text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="text-lg sm:text-xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             PKG
           </h1>
         </div>
       </div>
       
       {/* Navigation com Glassmorfismo */}
-      <nav className="relative z-10 flex-1 space-y-1 p-4 overflow-y-auto">
+      <nav className="relative z-10 flex-1 space-y-1 p-2 sm:p-4 overflow-y-auto">
         {menuItems.map((item, index) => (
           <div key={item.href} className="animate-in fade-in-0 slide-in-from-left-4" style={{ animationDelay: `${index * 50}ms` }}>
             <Link
               href={item.href}
               className={cn(
-                "flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm font-medium transition-all duration-200 group backdrop-blur-sm",
+                "flex items-center gap-2 sm:gap-3 rounded-lg sm:rounded-xl px-2 sm:px-3 py-2 sm:py-2.5 text-xs sm:text-sm font-medium transition-all duration-200 group backdrop-blur-sm",
                 pathname === item.href || (item.children && pathname.startsWith(item.href))
                   ? "bg-gradient-to-r from-primary/90 via-primary/80 to-primary/90 text-primary-foreground shadow-lg shadow-primary/20 ring-2 ring-primary/30 scale-[1.02] backdrop-blur-md"
                   : "hover:bg-white/10 dark:hover:bg-white/5 hover:text-accent-foreground hover:scale-[1.01] hover:shadow-md hover:ring-1 hover:ring-white/20 dark:hover:ring-white/10"
               )}
             >
               <item.icon className={cn(
-                "h-5 w-5 transition-transform duration-200",
+                "h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-200 flex-shrink-0",
                 pathname === item.href || (item.children && pathname.startsWith(item.href))
                   ? "scale-110"
                   : "group-hover:scale-110"
               )} />
-              <span>{item.title}</span>
+              <span className="truncate">{item.title}</span>
             </Link>
             {item.children && (pathname.startsWith(item.href) || pathname === item.href) && (
-              <div className="ml-8 mt-1 space-y-1 animate-in fade-in-0 slide-in-from-top-2">
+              <div className="ml-4 sm:ml-8 mt-1 space-y-1 animate-in fade-in-0 slide-in-from-top-2">
                 {item.children.map((child, childIndex) => (
                   <Link
                     key={child.href}
                     href={child.href}
                     className={cn(
-                      "flex items-center gap-3 rounded-xl px-3 py-2 text-sm transition-all duration-200 backdrop-blur-sm",
+                      "flex items-center gap-2 sm:gap-3 rounded-lg sm:rounded-xl px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm transition-all duration-200 backdrop-blur-sm",
                       pathname === child.href
                         ? "bg-primary/30 dark:bg-primary/20 text-primary font-medium shadow-md shadow-primary/10 ring-1 ring-primary/40 scale-[1.02] backdrop-blur-md"
                         : "hover:bg-white/10 dark:hover:bg-white/5 hover:text-accent-foreground hover:scale-[1.01] hover:shadow-sm hover:ring-1 hover:ring-white/20 dark:hover:ring-white/10"
@@ -148,13 +148,13 @@ export function Sidebar() {
       </nav>
       
       {/* Footer com Glassmorfismo */}
-      <div className="relative z-10 border-t border-border/30 p-4 bg-gradient-to-t from-card/40 to-transparent backdrop-blur-md">
+      <div className="relative z-10 border-t border-border/30 p-2 sm:p-4 bg-gradient-to-t from-card/40 to-transparent backdrop-blur-md">
         <Button
           variant="ghost"
-          className="w-full justify-start hover:bg-destructive/20 dark:hover:bg-destructive/10 hover:text-destructive transition-all duration-200 group rounded-xl backdrop-blur-sm hover:ring-1 hover:ring-destructive/20"
+          className="w-full justify-start hover:bg-destructive/20 dark:hover:bg-destructive/10 hover:text-destructive transition-all duration-200 group rounded-lg sm:rounded-xl backdrop-blur-sm hover:ring-1 hover:ring-destructive/20 text-xs sm:text-sm py-2 sm:py-2.5"
           onClick={handleLogout}
         >
-          <LogOut className="mr-2 h-4 w-4 transition-transform group-hover:rotate-12" />
+          <LogOut className="mr-2 h-3.5 w-3.5 sm:h-4 sm:w-4 transition-transform group-hover:rotate-12 flex-shrink-0" />
           Sair
         </Button>
       </div>

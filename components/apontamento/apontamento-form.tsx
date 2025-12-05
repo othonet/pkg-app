@@ -205,7 +205,7 @@ export default function ApontamentoForm({
             id="numeroCarroca"
             type="number"
             placeholder="Ex: 1, 2, 3..."
-            className="h-11 transition-all focus:scale-[1.01]"
+            className="h-10 sm:h-11 transition-all focus:scale-[1.01] text-sm sm:text-base"
             {...register("numeroCarroca", { valueAsNumber: true })}
           />
           {numeroCarrocaFixo && (
@@ -228,7 +228,7 @@ export default function ApontamentoForm({
             id="numeroPallet"
             type="number"
             placeholder="Ex: 1, 2, 3..."
-            className="h-11 transition-all focus:scale-[1.01]"
+            className="h-10 sm:h-11 transition-all focus:scale-[1.01] text-sm sm:text-base"
             {...register("numeroPallet", { valueAsNumber: true })}
           />
           {errors.numeroPallet && (
@@ -276,7 +276,7 @@ export default function ApontamentoForm({
             onValueChange={setSelectedValvula}
             disabled={!cabecalId || loadingValvulas}
           >
-            <SelectTrigger className="h-11 transition-all focus:scale-[1.01]" disabled={!cabecalId || loadingValvulas}>
+            <SelectTrigger className="h-10 sm:h-11 transition-all focus:scale-[1.01] text-sm sm:text-base" disabled={!cabecalId || loadingValvulas}>
               <SelectValue placeholder={loadingValvulas ? "Carregando..." : "Selecione a válvula"} />
             </SelectTrigger>
             <SelectContent>
@@ -315,7 +315,7 @@ export default function ApontamentoForm({
             value={variedadeId || ""}
             onValueChange={(value) => setValue("variedadeId", value, { shouldValidate: true })}
           >
-            <SelectTrigger className="h-11 transition-all focus:scale-[1.01]">
+            <SelectTrigger className="h-10 sm:h-11 transition-all focus:scale-[1.01] text-sm sm:text-base">
               <SelectValue placeholder="Selecione uma variedade" />
             </SelectTrigger>
             <SelectContent>
@@ -341,7 +341,7 @@ export default function ApontamentoForm({
             id="quantidadeContainers"
             type="number"
             placeholder="168 (padrão)"
-            className="h-11 transition-all focus:scale-[1.01]"
+            className="h-10 sm:h-11 transition-all focus:scale-[1.01] text-sm sm:text-base"
             {...register("quantidadeContainers", { valueAsNumber: true })}
           />
           {errors.quantidadeContainers && (

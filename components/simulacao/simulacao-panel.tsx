@@ -301,7 +301,7 @@ export default function SimulacaoPanel({
   }
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="grid gap-4 sm:gap-6 grid-cols-1 md:grid-cols-2">
       <Card className="border shadow-xl ring-1 ring-border/50">
         <CardHeader>
           <CardTitle className="text-xl flex items-center gap-2">

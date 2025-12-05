@@ -19,7 +19,7 @@ export default function ContentoresPorHoraSecundarioChart({ data }: ContentoresP
   }
 
   return (
-    <ResponsiveContainer width="100%" height={300}>
+    <ResponsiveContainer width="100%" height={250} className="sm:h-[300px]">
       <BarChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 5 }}>
         <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
         <XAxis 

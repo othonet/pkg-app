@@ -58,25 +58,25 @@ export default async function CadastrosPage() {
   }
 
   return (
-    <div className="space-y-6 animate-in fade-in-0 duration-500">
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10 flex items-center justify-center shadow-lg ring-2 ring-primary/20">
-            <Settings className="w-5 h-5 text-primary drop-shadow-sm" />
+    <div className="space-y-4 sm:space-y-6 animate-in fade-in-0 duration-500">
+      <div className="space-y-3 sm:space-y-4">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10 flex items-center justify-center shadow-lg ring-2 ring-primary/20">
+            <Settings className="w-4 h-4 sm:w-5 sm:h-5 text-primary drop-shadow-sm" />
           </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             Cadastros
           </h1>
         </div>
         
-        <div className="p-4 rounded-lg border-2 border-green-500/30 bg-green-500/10 dark:bg-green-500/5">
-          <p className="text-sm text-green-700 dark:text-green-300">
+        <div className="p-3 sm:p-4 rounded-lg border-2 border-green-500/30 bg-green-500/10 dark:bg-green-500/5">
+          <p className="text-xs sm:text-sm text-green-700 dark:text-green-300">
             Gerencie todos os cadastros do sistema
           </p>
         </div>
       </div>
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {cadastrosItems.map((item, index) => (
           <Link 
             key={item.href} 

@@ -20,12 +20,12 @@ export default async function ApontamentoPage() {
   })
 
   return (
-    <div className="space-y-6 animate-in fade-in-0 duration-500">
-      <div className="space-y-4">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10 flex items-center justify-center shadow-lg ring-2 ring-primary/20">
+    <div className="space-y-4 sm:space-y-6 animate-in fade-in-0 duration-500">
+      <div className="space-y-3 sm:space-y-4">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-primary/30 via-primary/20 to-primary/10 flex items-center justify-center shadow-lg ring-2 ring-primary/20">
             <svg
-              className="w-5 h-5 text-primary drop-shadow-sm"
+              className="w-4 h-4 sm:w-5 sm:h-5 text-primary drop-shadow-sm"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -38,21 +38,21 @@ export default async function ApontamentoPage() {
               />
             </svg>
           </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-foreground to-foreground/70 bg-clip-text text-transparent">
             Apontamento de Chegada
           </h1>
         </div>
         
-        <div className="p-4 rounded-lg border-2 border-green-500/30 bg-green-500/10 dark:bg-green-500/5">
-          <p className="text-sm text-green-700 dark:text-green-300">
+        <div className="p-3 sm:p-4 rounded-lg border-2 border-green-500/30 bg-green-500/10 dark:bg-green-500/5">
+          <p className="text-xs sm:text-sm text-green-700 dark:text-green-300">
             Registre pallets individuais. Cada pallet representa 168 contentores de uma área específica do campo (CAB + VÁLVULA).
           </p>
         </div>
       </div>
 
       <Card className="border shadow-2xl bg-gradient-to-br from-card via-card to-card/99 ring-1 ring-border/50 dark:ring-border/30">
-        <CardHeader className="pb-4">
-          <CardTitle className="text-2xl">Novo Apontamento</CardTitle>
+        <CardHeader className="pb-3 sm:pb-4 px-4 sm:px-6">
+          <CardTitle className="text-xl sm:text-2xl">Novo Apontamento</CardTitle>
         </CardHeader>
         <CardContent>
           <ApontamentoForm cabecais={cabecais} variedades={variedades} />
